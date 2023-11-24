@@ -30,7 +30,7 @@ function processarCadastroVoluntarios(requisicao,resposta)
             <title>Adote uma Criança - Lista Voluntariado </title>
         </head>
         <body background="Natal.jpg">
-            <h1 style="text-align: center;">LISTA DE VOLUNTARIADOS</h1>
+            <h1 style="text-align: center; background:"white">LISTA DE VOLUNTARIADOS</h1>
             <table class="table table-danger table-hover">
                 <thead>
                     <tr>
@@ -102,11 +102,9 @@ app.get('/',(requisicao,resposta) =>{
         <h1>MUDE O NATAL DE UMA CRIANÇA !!</h1>
         <h2>Adote uma criança e dê um presente</h2>
         <hr>
-        <p>Cadastre aqui o seu interesse em retirar conosco uma cartinha e seja o Papai Noel de uma criança!</p>
-        <p>Clique no link "Cadastrar Voluntário", preenchA corretamente o formulário e envie!</p>
-         <p>Entraremos em contato após para te enviar a cartinha da criança</p>
+        <p>Cadastre aqui o seu interesse em retirar conosco <br>uma cartinha e seja o Papai Noel de uma criança!</p>
         <ul>
-            <p><a href="/Form_Volun.html">Cadastrar Voluntário</a></p>
+            <p><a href="/Form_Volun.html">CADASTRAR</a></p>
         </ul>
         </div`)
 })
