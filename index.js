@@ -30,7 +30,7 @@ function processarCadastroVoluntarios(requisicao,resposta)
             <title>Adote uma Criança - Lista Voluntariado </title>
         </head>
         <body background="Natal.jpg">
-            <h1 style="text-align: center; background:"white">LISTA DE VOLUNTARIADOS</h1>
+            <h1 style="text-align: center; color:white">LISTA DE VOLUNTARIADOS</h1>
             <table class="table table-danger table-hover">
                 <thead>
                     <tr>
