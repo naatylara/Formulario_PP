@@ -9,15 +9,16 @@
         .container{
             margin: 55px auto;
             width: 680px;           
-            padding: 20px;            
+            padding: 20px;  
+            background-color:white;                 
         }
     </style>
 </head>
-<body background-img="Natal.jpg">        
+<body background="Natal.jpg">        
     <div class="container">
-        <form action="/CadastrarUsuario" method='GET' class="row g-3 needs-validation border p-4" novalidate >
+        <form action="/Cadastrados" method='GET' class="row g-3 needs-validation g-3" novalidate >
            <!-- <fieldset class="border p-2">-->
-            <legend class="mb-3 ">Formulário de Voluntariado - Campanha de Natal</legend>
+            <legend class="mb-3" style="text-align: center;">Formulário de Voluntariado - Campanha de Natal</legend>
             <div class="col-md-4">
               <label for="" class="form-label">Nome</label>
               <input type="text" class="form-control" id="nome" name="nome" required>
@@ -33,9 +34,9 @@
               </div>
             </div>
             <div class="col-md-4">
-              <label for="telefone" class="form-label">Telefone</label>
+              <label for="tel" class="form-label">Telefone</label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" id="tel" name="tel" aria-describedby="inputGroupPrepend" required>
+                <input type="tel" class="form-control" id="tel" name="tel" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                     Por favor, informe seu telefone!
                 </div>
@@ -94,7 +95,7 @@
             </div>
             <div class="col">
                 <label for="faixaEtaria">Faixa Etária da Criança:</label>
-                <select class="form-select" id="faixaEtaria" required>
+                <select class="form-select" id="faixaEtaria" name="faixaEtaria" required>
                 <option selected disabled value="">Selecione a idade</option>
                 <option value="0-2">0-2 anos</option>
                 <option value="3-5">3-5 anos</option>

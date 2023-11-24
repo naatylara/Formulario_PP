@@ -5,7 +5,7 @@ const host = '0.0.0.0';
 
 var listaUsuarios=[];
 
-function processarCadastroUsuario(requisicao,resposta)
+function processarCadastroVoluntarios(requisicao,resposta)
 {
      //processar os parametros da url em http://localhost:3000/CadastraUsuario.html?nome=Nataly+Lara&sobrenome=Moraes+da+Silva+&nomeUsuario=naatylara&cidade=Presidente+Prudente&uf=PR&cep=19025-410
     const usuario = {
@@ -14,8 +14,8 @@ function processarCadastroUsuario(requisicao,resposta)
                     telefone: requisicao.query.telefone,
                     cidade: requisicao.query.cidade,
                     uf: requisicao.query.uf,
-                    cep: requisicao.query.cep
-                    
+                    cep: requisicao.query.cep,
+                    faixaEtaria:requisicao.query.faixaEtaria
                     }
     //adiciona um nome usuario na lista de usuarios ja cadastrados
     listaUsuarios.push(usuario);
@@ -36,9 +36,10 @@ function processarCadastroUsuario(requisicao,resposta)
                     <tr>
                         <th scope="col">NOME</th>
                         <th scope="col">SOBRENOME</th>
-                        <th scope="col">NOME DO USUARIO</th>
+                        <th scope="col">TELEFONE</th>
                         <th scope="col">CIDADE/UF</th>
-                        <th scope="col">CEP</th>                    
+                        <th scope="col">CEP</th>   
+                        <th scope="col">FAIXA ETARIA DESEJADA</th>              
                     </tr>
                 </thead>   
                 <tbody>`; 
@@ -49,17 +50,18 @@ function processarCadastroUsuario(requisicao,resposta)
             <tr>
                 <td>${usuario.nome}</td>
                 <td>${usuario.sobrenome}</td>
-                <td>${usuario.nomeUsuario}</td>
+                <td>${usuario.tel}</td>
                 <td>${usuario.cidade}/${usuario.uf}</td>
                 <td>${usuario.cep}</td>
+                <td>${usuario.faixaEtaria}</td>
             </tr>
             `;
     }
     conteudoResposta +=`
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="/" role="button">VOLTAR AO MENU</a>
-            <a class="btn btn-primary" href="/CadastraUsuario.html" role="button">CONTINUAR CADASTRANDO</a>
+            <a class="btn btn-primary" href="/" role="button">Inicio</a>
+            <a class="btn btn-primary" href="/CadastraUsuario.html" role="button">Adotar outra criança</a>
         </body>
        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -91,7 +93,7 @@ app.get('/',(requisicao,resposta) =>{
 
 //rota para processar o cadastro de usuarios endpont = '/CadastraUsuario'
 
-app.get('/CadastrarUsuario', processarCadastroUsuario);
+app.get('/Cadastrados', processarCadastroVoluntarios);
 
 app.listen(porta, host, () => {
     console.log(`Servidor executando na url http://${host}:${porta}`);
