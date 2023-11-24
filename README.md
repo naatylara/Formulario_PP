@@ -1,5 +1,5 @@
 # Formulario_PP
-Projeto para exemplificar a manipulacao dos parametros enviados ao servidor via formulario html.
+Modificações no projeto: Alterando o projeto da atividade 2 para enviar requisições do tipo POST e validação dos dados no lado do servidor.
 
 Link do projeto no Github: https://github.com/naatylara/Formulario_PP.git.
 
