@@ -3,50 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuario</title>
+    <title>Formulário de Voluntariado - Campanha de Natal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <style>
+        .container{
+            margin: 55px auto;
+            width: 680px;           
+            padding: 20px;            
+        }
+    </style>
 </head>
-<body>
+<body>        
     <div class="container">
-        <form  action="/CadastrarUsuario" method='GET'class="row g-3 needs-validation" novalidate>
-            <fieldset class="border p-2">
-            <legend class="mb-3 ">CADASTRO DE USUARIO</legend>
+        <form action="/CadastrarUsuario" method='GET' class="row g-3 needs-validation border p-4" novalidate >
+           <!-- <fieldset class="border p-2">-->
+            <legend class="mb-3 ">Formulário de Voluntariado - Campanha de Natal</legend>
             <div class="col-md-4">
-              <label for="" class="form-label">NOME</label>
+              <label for="" class="form-label">Nome</label>
               <input type="text" class="form-control" id="nome" name="nome" required>
               <div class="invalid-feedback">
                 Por favor, informe seu nome!
               </div>
             </div>
             <div class="col-md-4">
-              <label for="sobrenome" class="form-label">SOBRENOME</label>
+              <label for="sobrenome" class="form-label">Sobrenome</label>
               <input type="text" class="form-control" id="sobrenome" name="sobrenome"  required>
               <div class="invalid-feedback">
                 Por favor, informe seu sobrenome!
               </div>
             </div>
             <div class="col-md-4">
-              <label for="nomeUsuario" class="form-label">Nome do usuario</label>
+              <label for="telefone" class="form-label">Telefone</label>
               <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="nomeUsuario" name="nomeUsuario" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="tel" name="tel" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
-                    Por favor, informe seu nome de usuario!
+                    Por favor, informe seu telefone!
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <label for="cidade" class="form-label">CIDADE</label>
+            <div class="col-md-4">
+              <label for="cidade" class="form-label">Cidade</label>
               <input type="text" class="form-control" id="cidade" name="cidade" required>
               <div class="invalid-feedback">
                 Por favor, informe sua cidade!
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="uf" class="form-label">UF</label>
               <select class="form-select" id="uf" name="uf" required>
-                <option selected disabled value="">ESCOLHA UM ESTADO...</option>
+                <option selected disabled value="">Escolha um estado</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
                 <option value="AP">Amapá</option>
@@ -80,18 +85,32 @@
                 Por favor, informe seu estado!
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <label for="cep" class="form-label">CEP</label>
               <input type="text" class="form-control" id="cep" name="cep" required>
               <div class="invalid-feedback">
                 Por favor, informe seu CEP!
               </div>
             </div>
-            <div class="col-12 mt-4">
-            
-              <button class="btn btn-primary" type="submit">CADASTRAR</button>
+            <div class="col">
+                <label for="faixaEtaria">Faixa Etária da Criança:</label>
+                <select class="form-select" id="faixaEtaria" required>
+                <option selected disabled value="">Selecione a idade</option>
+                <option value="0-2">0-2 anos</option>
+                <option value="3-5">3-5 anos</option>
+                <option value="6-8">6-8 anos</option>
+                <option value="9-11">9-11 anos</option>
+                <option value="12-15">12-15 anos</option>
+            </select>
+            <div class="invalid-feedback">
+                Por favor, informe a faixa etaria desejada!
             </div>
-            </fieldset>
+            </div>
+            <div class="col-12 mt-4"></div>              
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-danger" style="font-size: larger;" type="submit">Cadastrar</button>
+              </div>
+            
           </form>
     </div>
 
