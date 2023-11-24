@@ -97,7 +97,7 @@ app.get('/',(requisicao,resposta) =>{
     
         </style>
     </head>
-    <body>
+    <body background="Natal.jpg" >
         <div class="container">
         <h1>MUDE O NATAL DE UMA CRIANÇA !!</h1>
         <h2>Adote uma criança e dê um presente</h2>
