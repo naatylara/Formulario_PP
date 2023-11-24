@@ -27,11 +27,11 @@ function processarCadastroVoluntarios(requisicao,resposta)
         <head>
             <meta charset="UTF-8">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            <title>MENU DO SISTEMA</title>
+            <title>Adote uma Criança - Lista Voluntariado </title>
         </head>
-        <body>
-            <h1>LISTA DE USUARIO CADASTRADO</h1>
-            <table class="table table-striped table-hover">
+        <body background="Natal.jpg">
+            <h1 style="text-align: center;">LISTA DE VOLUNTARIADOS</h1>
+            <table class="table table-danger table-hover">
                 <thead>
                     <tr>
                         <th scope="col">NOME</th>
@@ -60,8 +60,8 @@ function processarCadastroVoluntarios(requisicao,resposta)
     conteudoResposta +=`
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="/" role="button">Inicio</a>
-            <a class="btn btn-primary" href="/CadastraUsuario.html" role="button">Adotar outra criança</a>
+            <a class="btn btn-danger" href="/" role="button">Inicio</a>
+            <a class="btn btn-danger" href="/Form_Volun.html" role="button">Adotar outra criança</a>
         </body>
        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -77,18 +77,38 @@ app.use(express.static('./paginas'));
 
 app.get('/',(requisicao,resposta) =>{
     resposta.end(`
-    <!DOCTYPE html>
-        <head>
-            <meta charset="UTF-8">
-            <title>MENU DO SISTEMA</title>
-        </head>
-        <body>
-            <h1>MENU</h1>
-            <ul>
-                <li><a href="/CadastraUsuario.html">CADASTRA USUARIO</a></li>
-            </ul>
-        </body>
-    </hmtl>`)
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Adote uma Criança </title>
+        <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        .container{
+            margin: 55px auto;
+            width: 680px;           
+            padding: 20px;  
+            background-color:white;                 
+        }
+    
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h1>MUDE O NATAL DE UMA CRIANÇA !!</h1>
+        <h2>Adote uma criança e dê um presente</h2>
+        <hr>
+        <p>Que tal enviar a cartinha para o Papai Noel por aqui?</p>
+        <p>Clique no link "Cadastrar Voluntário", preenchA corretamente o formulário e envie!</p>
+         <p>Entraremos em contato após para te enviar a cartinha da criança</p>
+        <ul>
+            <p><a href="/Form_Volun.html">Cadastrar Voluntário</a></p>
+        </ul>
+        </div`)
 })
 
 //rota para processar o cadastro de usuarios endpont = '/CadastraUsuario'
