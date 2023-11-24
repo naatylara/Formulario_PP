@@ -102,7 +102,7 @@ app.get('/',(requisicao,resposta) =>{
         <h1>MUDE O NATAL DE UMA CRIANÇA !!</h1>
         <h2>Adote uma criança e dê um presente</h2>
         <hr>
-        <p>Que tal enviar a cartinha para o Papai Noel por aqui?</p>
+        <p>Cadastre aqui o seu interesse em retirar conosco uma cartinha e seja o Papai Noel de uma criança!</p>
         <p>Clique no link "Cadastrar Voluntário", preenchA corretamente o formulário e envie!</p>
          <p>Entraremos em contato após para te enviar a cartinha da criança</p>
         <ul>
