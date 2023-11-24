@@ -81,7 +81,7 @@ function processarCadastroVoluntarios(requisicao,resposta)
                             <input type="text" class="form-control" id="cidade" name="cidade" value= "${dados.cidade}" required>
                             `;
                     if(!dados.cidade){
-                        conteudoResposta`
+                        conteudoResposta +=`
                             <div class="invalid-feedback">
                                 Por favor, informe sua cidade!
                             </div>
