@@ -11,10 +11,11 @@ function processarCadastroUsuario(requisicao,resposta)
     const usuario = {
                     nome: requisicao.query.nome,
                     sobrenome: requisicao.query.sobrenome,
-                    nomeUsuario: requisicao.query.nomeUsuario,
+                    telefone: requisicao.query.telefone,
                     cidade: requisicao.query.cidade,
                     uf: requisicao.query.uf,
                     cep: requisicao.query.cep
+                    
                     }
     //adiciona um nome usuario na lista de usuarios ja cadastrados
     listaUsuarios.push(usuario);
