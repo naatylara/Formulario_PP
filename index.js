@@ -172,13 +172,13 @@ function processarCadastroVoluntarios(requisicao,resposta)
         {
             //processar os parametros da url em http://localhost:3000/CadastraUsuario.html?nome=Nataly+Lara&sobrenome=Moraes+da+Silva+&nomeUsuario=naatylara&cidade=Presidente+Prudente&uf=PR&cep=19025-410
             const usuario = {
-                            nome: requisicao.query.nome,
-                            sobrenome: requisicao.query.sobrenome,
-                            telefone: requisicao.query.tel,
-                            cidade: requisicao.query.cidade,
-                            uf: requisicao.query.uf,
-                            cep: requisicao.query.cep,
-                            faixaEtaria:requisicao.query.faixaEtaria
+                                nome: dados.nome,
+                                sobrenome: dados.sobrenome,
+                                telefone: dados.tel,
+                                cidade: dados.cidade,
+                                uf: dados.uf,
+                                cep: dados.cep,
+                                faixaEtaria: dados.faixaEtaria
                             }
             //adiciona um nome usuario na lista de usuarios ja cadastrados
             listaUsuarios.push(usuario);
