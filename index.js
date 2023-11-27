@@ -170,7 +170,6 @@ function processarCadastroVoluntarios(requisicao,resposta)
         } 
         else
         {
-
             //processar os parametros da url em http://localhost:3000/CadastraUsuario.html?nome=Nataly+Lara&sobrenome=Moraes+da+Silva+&nomeUsuario=naatylara&cidade=Presidente+Prudente&uf=PR&cep=19025-410
             const usuario = {
                             nome: requisicao.query.nome,
@@ -186,7 +185,7 @@ function processarCadastroVoluntarios(requisicao,resposta)
 
             //retornar a lista de usuarios
 
-            let conteudoResposta = `
+            conteudoResposta = `
             <!DOCTYPE html>
                 <head>
                     <meta charset="UTF-8">
@@ -247,6 +246,7 @@ app.use(express.urlencoded({ extended: true }));
 //indicando para a aplicacao como servir arquivo estaticos localizados na pasta 'paginas'
 app.use(express.static(path.join(process.cwd(),'paginas')));
 
+//pagina inicial
 app.get('/',(requisicao,resposta) =>{
     resposta.end(`
     <html lang="pt-br">
@@ -283,7 +283,8 @@ app.get('/',(requisicao,resposta) =>{
 
 //rota para processar o cadastro de usuarios endpont = '/CadastraUsuario'
 
-app.get('/Cadastrados', processarCadastroVoluntarios);
+app.post('/Cadastrados', processarCadastroVoluntarios);
+//primeiro foi get, agora e post 
 
 app.listen(porta, host, () => {
     console.log(`Servidor executando na url http://${host}:${porta}`);

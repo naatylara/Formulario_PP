@@ -18,36 +18,28 @@
     <div class="container">
         <form action="/Cadastrados" method='GET' class="row g-3 needs-validation g-3" novalidate >
            <!-- <fieldset class="border p-2">-->
-            <legend class="mb-3" style="text-align: center;">Formulário de Voluntariado - Campanha de Natal</legend>
+            <legend class="mb-3" style="text-align: center;">Adote uma cartinha - Campanha de Natal</legend>
             <div class="col-md-4">
               <label for="" class="form-label">Nome</label>
               <input type="text" class="form-control" id="nome" name="nome" required>
-              <div class="invalid-feedback">
-                Por favor, informe seu nome!
-              </div>
+              
             </div>
             <div class="col-md-4">
               <label for="sobrenome" class="form-label">Sobrenome</label>
               <input type="text" class="form-control" id="sobrenome" name="sobrenome"  required>
-              <div class="invalid-feedback">
-                Por favor, informe seu sobrenome!
-              </div>
+              
             </div>
             <div class="col-md-4">
               <label for="tel" class="form-label">Telefone</label>
               <div class="input-group has-validation">
                 <input type="tel" class="form-control" id="tel" name="tel" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                    Por favor, informe seu telefone!
-                </div>
+                
               </div>
             </div>
             <div class="col-md-4">
               <label for="cidade" class="form-label">Cidade</label>
               <input type="text" class="form-control" id="cidade" name="cidade" required>
-              <div class="invalid-feedback">
-                Por favor, informe sua cidade!
-              </div>
+              
             </div>
             <div class="col-md-4">
               <label for="uf" class="form-label">UF</label>
@@ -82,16 +74,12 @@
                 <option value="TO">Tocantins</option>
                 <option value="EX">Estrangeiro</option>
               </select>
-              <div class="invalid-feedback">
-                Por favor, informe seu estado!
-              </div>
+              
             </div>
             <div class="col-md-4">
               <label for="cep" class="form-label">CEP</label>
               <input type="text" class="form-control" id="cep" name="cep" required>
-              <div class="invalid-feedback">
-                Por favor, informe seu CEP!
-              </div>
+              
             </div>
             <div class="col">
                 <label for="faixaEtaria">Faixa Etária da Criança:</label>
@@ -103,9 +91,7 @@
                 <option value="9-11">9-11 anos</option>
                 <option value="12-15">12-15 anos</option>
             </select>
-            <div class="invalid-feedback">
-                Por favor, informe a faixa etaria desejada!
-            </div>
+           
             </div>
             <div class="col-12 mt-4"></div>              
             <div class="d-grid gap-2 col-6 mx-auto">
@@ -134,6 +120,22 @@
                     form.classList.add('was-validated')
                 });
         })();
+
+        //funcao para cep
+        
+
+        function mCEP () {
+            var cep = event.target.value;
+            cep = cep.replace(/\D/g, "")
+            cep = cep.replace(/^(\d{2})(\d)/, "$1.$2")
+            cep = cep.replace(/.(\d{3})(\d)/, ".$1-$2")
+            event.target.value = cep;
+        }
+     
+
+
+
+
     </script>
 
 
