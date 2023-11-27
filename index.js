@@ -174,7 +174,7 @@ function processarCadastroVoluntarios(requisicao,resposta)
             const usuario = {
                             nome: requisicao.query.nome,
                             sobrenome: requisicao.query.sobrenome,
-                            telefone: requisicao.query.telefone,
+                            telefone: requisicao.query.tel,
                             cidade: requisicao.query.cidade,
                             uf: requisicao.query.uf,
                             cep: requisicao.query.cep,
