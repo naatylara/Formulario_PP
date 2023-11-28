@@ -35,31 +35,31 @@ function processarCadastroVoluntarios(requisicao,resposta)
                 </head>
                 <body background="Natal.jpg">        
                     <div class="container">
-                        <form action="/Cadastrados" method='GET' class="row g-3 needs-validation g-3" novalidate >
+                        <form action="/Cadastrados" method='POST' class="row g-3 needs-validation g-3" novalidate >
                         <!-- <fieldset class="border p-2">-->
                             <legend class="mb-3" style="text-align: center;">Formulário de Voluntariado - Campanha de Natal</legend>
                             
                             <div class="col-md-4">
                             <label for="" class="form-label">Nome</label>
                             <input type="text" class="form-control" id="nome" name="nome" value="${dados.nome}" required>
+                            </div>
                 `;
                 if (!dados.nome){
                     conteudoResposta +=
                         `
-                            <div class="invalid-feedback">
-                                Por favor, informe seu nome!
-                            </div>
-                            </div>`;}
+                            <div>
+                            <p class="text-danger">Por favor, informe o nome!</p>
+                            </div>  `;}
                 conteudoResposta +=`
                             <div class="col-md-4">
                             <label for="sobrenome" class="form-label">Sobrenome</label>
                             <input type="text" class="form-control" id="sobrenome" name="sobrenome" value="${dados.sobrenome}" required>
+                            </div>
                             `;
                 if (!dados.sobrenome){
                     conteudoResposta += `
-                            <div class="invalid-feedback">
-                                Por favor, informe seu sobrenome!
-                            </div>
+                            <div>
+                            <p class="text-danger">Por favor, informe seu sobrenome!</p>
                             </div>`;}
         
                     conteudoResposta +=`
@@ -67,24 +67,21 @@ function processarCadastroVoluntarios(requisicao,resposta)
                             <label for="tel" class="form-label">Telefone</label>
                             <div class="input-group has-validation">
                                 <input type="tel" class="form-control" id="tel" name="tel" aria-describedby="inputGroupPrepend" value="${dados.tel}" required>
-                              `;
+                            </div>`;
                     if (!dados.tel){   
                         conteudoResposta+=`             
-                                <div class="invalid-feedback">
-                                    Por favor, informe seu telefone!
-                                </div>
-                            </div>
-                            </div>`;}
+                                <div>
+                                <p class="text-danger">Por favor, informe o seu telefone!</p>
+                                </div>`;}
                     conteudoResposta +=`
                             <div class="col-md-4">
-                            <label for="cidade" class="form-label">Cidade</label>
-                            <input type="text" class="form-control" id="cidade" name="cidade" value= "${dados.cidade}" required>
-                            `;
+                                <label for="cidade" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="cidade" name="cidade" value= "${dados.cidade}" required>
+                            </div>`;
                     if(!dados.cidade){
                         conteudoResposta +=`
-                            <div class="invalid-feedback">
-                                Por favor, informe sua cidade!
-                            </div>
+                            <div>
+                            <p class="text-danger">Por favor, informe sua cidade!</p>
                             </div>`;}
                         conteudoResposta +=`
                             <div class="col-md-4">
@@ -119,23 +116,23 @@ function processarCadastroVoluntarios(requisicao,resposta)
                                 <option value="SE">Sergipe</option>
                                 <option value="TO">Tocantins</option>
                                 <option value="EX">Estrangeiro</option>
-                            </select>`;
+                            </select>
+                            </div>`;
                     if(!dados.uf){
                         conteudoResposta+=`
-                            <div class="invalid-feedback">
-                                Por favor, informe seu estado!
+                            <div>
+                            <p class="text-danger">Por favor, informe o seu estado!</p>
                             </div>
                             </div>`;}
                             conteudoResposta+=`
                             <div class="col-md-4">
                             <label for="cep" class="form-label">CEP</label>
                             <input type="text" class="form-control" id="cep" name="cep" value= "${dados.cep}" required>
-                            `;  
+                            </div>`;  
                     if(!dados.cep){
                         conteudoResposta +=`                          
-                             <div class="invalid-feedback">
-                                Por favor, informe seu CEP!
-                            </div>
+                             <div >
+                             <p class="text-danger">Por favor, informe o seu CEP!</p>
                             </div>`;}
                             conteudoResposta+=`
                             <div class="col">
@@ -147,22 +144,20 @@ function processarCadastroVoluntarios(requisicao,resposta)
                                 <option value="6-8">6-8 anos</option>
                                 <option value="9-11">9-11 anos</option>
                                 <option value="12-15">12-15 anos</option>
-                            </select>`;
+                            </select>
+                            </div>`;
                     if(!dados.faixaEtaria){
                         conteudoResposta +=`
-                            <div class="invalid-feedback">
-                                Por favor, informe a faixa etaria desejada!
-                            </div>
+                            <div >
+                            <p class="text-danger">Por favor, informe a faixa etaria escolhida!</p>
                             </div>`;}
                             conteudoResposta += `
                             <div class="col-12 mt-4"></div>              
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <button class="btn btn-danger" style="font-size: larger;"type="submit">Cadastrar</button>
-                            </div>
-                            
+                            </div>                            
                         </form>
                     </div>
-
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     </body>
                     </html>`;
@@ -170,7 +165,7 @@ function processarCadastroVoluntarios(requisicao,resposta)
         } 
         else
         {
-            //processar os parametros da url em http://localhost:3000/CadastraUsuario.html?nome=Nataly+Lara&sobrenome=Moraes+da+Silva+&nomeUsuario=naatylara&cidade=Presidente+Prudente&uf=PR&cep=19025-410
+            
             const usuario = {
                                 nome: dados.nome,
                                 sobrenome: dados.sobrenome,
@@ -230,7 +225,7 @@ function processarCadastroVoluntarios(requisicao,resposta)
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
                     </html> `;  
                     resposta.end(conteudoResposta);
-        }
+        } //fim else
 }
 
 
@@ -250,35 +245,38 @@ app.use(express.static(path.join(process.cwd(),'paginas')));
 app.get('/',(requisicao,resposta) =>{
     resposta.end(`
     <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Adote uma Criança </title>
-        <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-        }
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Adote uma Criança </title>
+            <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
 
-        .container{
-            margin: 55px auto;
-            width: 680px;           
-            padding: 20px;  
-            background-color:white;                 
-        }
-    
-        </style>
-    </head>
-    <body background="Natal.jpg" >
-        <div class="container">
-        <h1>MUDE O NATAL DE UMA CRIANÇA !!</h1>
-        <h2>Adote uma criança e dê um presente</h2>
-        <hr>
-        <p>Cadastre aqui o seu interesse em retirar conosco <br>uma cartinha e seja o Papai Noel de uma criança!</p>
-        <ul>
-            <p><a href="/Form_Volun.html">CADASTRAR</a></p>
-        </ul>
-        </div`)
+            .container{
+                margin: 55px auto;
+                width: 680px;           
+                padding: 20px;  
+                background-color:white;                 
+            }
+        
+            </style>
+        </head>
+        <body background="Natal.jpg" >
+            <div class="container">
+                <h1>MUDE O NATAL DE UMA CRIANÇA !!</h1>
+                <h2>Adote uma criança e dê um presente</h2>
+                <hr>
+                <p>Cadastre aqui o seu interesse em retirar conosco <br>uma cartinha e seja o Papai Noel de uma criança!</p>
+                <ul>
+                    <p><a href="/Form_Volun.html">CADASTRAR</a></p>
+                </ul>
+            </div>
+        </body>
+    </html>         
+    `);
 })
 
 //rota para processar o cadastro de usuarios endpont = '/CadastraUsuario'
